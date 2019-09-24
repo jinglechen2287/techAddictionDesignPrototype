@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                //$('#stop').click(function(){
+                  //$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                //});
+                $('#scratch').hide();
+                var time = 10000;
+                var count = 0;
+                $('#scratch').click(function(){
+                    count++;
+                    $(this).hide();
+                    $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                     setTimeout(function(){
+                        $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                        $('#catpaw').animate({top: '150px'});
+                        $('#catpaw').animate({top: '-350px'});
+                        $('#scratch').show(500);
+                     }, time / Math.pow(2,count));
+                });
+                 setTimeout(function(){
+                    $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                    $('#catpaw').animate({top: '150px'});
+                     $('#catpaw').animate({top: '-350px'});
+                     $('#scratch').show(500);
+                }, 10000);
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "spaceblock" style="height: 200px"><p>This prototype may not work properly the first time because of loading issue. Please refresh.</p></div>
+    <!--    <p id = "play">play</p>
+        <p id = "stop">Stop</p>
+        <p id = "pause">Pause</p> -->
+        <iframe class="youtube-video" width="1440" height="810" src="https://www.youtube.com/embed/1CR0QmCaMTs?autoplay=1&mute=1&controls=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+        <div id ="scratch" style = "position: absolute; left: 650px; top: 500px"><img src="scratch.png" style="width:180px"></div>
+        <div id = "catpaw" style="position: absolute; left: 600px; top: -350px;"><img src="cat.png"></div>
+    </body>
+</html>
+
+
+

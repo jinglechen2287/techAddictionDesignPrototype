@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                //$('#stop').click(function(){
+                  //$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                //});
+                var a = 0;
+                var b =0;
+                var c =0;
+                var d =0;
+                var e =0;
+                var f =0;
+                var g=0;
+                var h=0;
+                $('#ink1').hide();
+                $('#ink2').hide();
+                $('#ink3').hide();
+                $('#ink4').hide();
+                $('#ink5').hide();
+                $('#ink6').hide();
+                $('#ink7').hide();
+                $('#ink8').hide();
+                var time = 10000;
+                var count = 0;
+                //ink 1 
+                setTimeout(function(){
+                     $('#inkimg1').css("opacity", Math.random());
+                     $('#inkimg1').css("width", Math.floor(Math.random() * 800) + 200);
+                     $('#ink1').css("top", (Math.floor(Math.random() * 500) + 300));
+                     $('#ink1').css("left", (Math.floor(Math.random() * 1040)));
+                     $('#ink1').show(500);
+                }, 2000);
+                $('#ink1').mouseover(function(){
+                    a++;
+                    //console.log(a);
+                    if (a>8) {
+                        a=0;
+                        count++;
+                        $('#ink1').hide(500);
+                        setTimeout(function(){
+                            $('#inkimg1').css("opacity", (Math.random() + 0.1 * count));
+                            $('#inkimg1').css("width", Math.floor(Math.random() * 800) + 200);
+                            $('#ink1').css("top", (Math.floor(Math.random() * 500) + 300));
+                            $('#ink1').css("left", (Math.floor(Math.random() * 1040)));
+                         $('#ink1').show(500);
+                        }, time / 2);
+                    }  
+                });
+                //ink2
+                setTimeout(function(){
+                     $('#inkimg2').css("opacity", (Math.random() + 0.1 * count));
+                     $('#inkimg2').css("width", Math.floor(Math.random() * 800) + 200);
+                     $('#ink2').css("top", (Math.floor(Math.random() * 500) + 300));
+                     $('#ink2').css("left", (Math.floor(Math.random() * 1040)));
+                     $('#ink2').show(500);
+                }, 5000);
+                $('#ink2').mouseover(function(){
+                    b++;
+                    //console.log(a);
+                    if (b>8) {
+                        b=0;
+                        $('#ink2').hide(500);
+                        setTimeout(function(){
+                            $('#inkimg2').css("opacity", (Math.random() + 0.1 * count));
+                            $('#inkimg2').css("width", Math.floor(Math.random() * 800) + 200);
+                            $('#ink2').css("top", (Math.floor(Math.random() * 500) + 300));
+                            $('#ink2').css("left", (Math.floor(Math.random() * 1040)));
+                         $('#ink2').show(500);
+                        }, time / 2);
+                    }  
+                });
+                //ink 3 
+                setTimeout(function(){
+                     $('#inkimg3').css("opacity", (Math.random() + 0.1 * count));
+                     $('#inkimg3').css("width", Math.floor(Math.random() * 800) + 200);
+                     $('#ink3').css("top", (Math.floor(Math.random() * 500) + 300));
+                     $('#ink3').css("left", (Math.floor(Math.random() * 1040)));
+                     $('#ink3').show(500);
+                }, 2000);
+                $('#ink3').mouseover(function(){
+                    c++;
+                    //console.log(a);
+                    if (c>8) {
+                        c=0;
+                        $('#ink1').hide(500);
+                        setTimeout(function(){
+                            $('#inkimg3').css("opacity", (Math.random() + 0.1 * count));
+                            $('#inkimg3').css("width", Math.floor(Math.random() * 800) + 200);
+                            $('#ink3').css("top", (Math.floor(Math.random() * 500) + 300));
+                            $('#ink3').css("left", (Math.floor(Math.random() * 840)));
+                         $('#ink3').show(500);
+                        }, time / 2);
+                    }  
+                });
+                //ink4
+                setTimeout(function(){
+                     $('#inkimg4').css("opacity", (Math.random() + 0.1 * count));
+                     $('#inkimg4').css("width", Math.floor(Math.random() * 800) + 200);
+                     $('#ink4').css("top", (Math.floor(Math.random() * 500) + 300));
+                     $('#ink4').css("left", (Math.floor(Math.random() * 840)));
+                     $('#ink4').show(500);
+                }, 5000);
+                $('#ink4').mouseover(function(){
+                    d++;
+                    //console.log(a);
+                    if (d>8) {
+                        d=0;
+                        $('#ink4').hide(500);
+                        setTimeout(function(){
+                            $('#inkimg4').css("opacity", (Math.random() + 0.1 * count));
+                            $('#inkimg4').css("width", Math.floor(Math.random() * 800) + 200);
+                            $('#ink4').css("top", (Math.floor(Math.random() * 500) + 200));
+                            $('#ink4').css("left", (Math.floor(Math.random() * 840)));
+                         $('#ink4').show(500);
+                        }, time / 2);
+                    }  
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "spaceblock" style="height: 250px"><p>This prototype may not work properly the first time because of loading issue. Please refresh.</p></div>
+    <!--    <p id = "play">play</p>
+        <p id = "stop">Stop</p>
+        <p id = "pause">Pause</p> -->
+        <iframe style="padding-left: 100px;" class="youtube-video" width="1200" height="675" src="https://www.youtube.com/embed/1CR0QmCaMTs?autoplay=1&mute=1&controls=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+        <div style = "position: absolute; top: 20px; left: -900px;" id = "phone"><img style="width: 2500px;" src="phone.png"></div>
+        <div id ="ink1" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg1" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink2" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg2" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink3" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg3" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink4" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg4" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink5" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg5" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink6" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg6" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink7" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg7" src="ink.png" style="width: 300px;"></div>
+        <div id ="ink8" style = "position: absolute; left: 650px; top: 500px"><img id = "inkimg8" src="ink.png" style="width: 300px;"></div>
+    </body>
+</html>
