@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                //$('#stop').click(function(){
+                  //$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                //});
+                setTimeout(function(){
+                    $('#block').animate({opacity: '0.1'});
+                }, 5000);
+                 setTimeout(function(){
+                    $('#block').animate({opacity: '0.3'});
+                }, 10000);
+                setTimeout(function(){
+                    $('#block').animate({opacity: '0.5'});
+                    //$('#block').animate({background: 'black'});
+                }, 15000);
+                setTimeout(function(){
+                    $('#block').animate({opacity: '1'});
+                    //$('#block').animate({background: 'black'});
+                }, 20000);
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "spaceblock" style="height: 250px"><p>This prototype may not work properly the first time because of loading issue. Please refresh.</p></div>
+    <!--    <p id = "play">play</p>
+        <p id = "stop">Stop</p>
+        <p id = "pause">Pause</p> -->
+        <iframe style="padding-left: 100px;" class="youtube-video" width="1200" height="675" src="https://www.youtube.com/embed/1CR0QmCaMTs?autoplay=1&mute=1&controls=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+         <div id ="block" style ="background: black;position:absolute;width: 1200px;height: 680px; top: 270px; left:120px; opacity: 0;"></div>
+        <div style = "position: absolute; top: 20px; left: -900px;" id = "phone"><img style="width: 2500px;" src="phone.png"></div>
+    </body>
+</html>
